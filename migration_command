@@ -1,0 +1,11 @@
+# create migration file
+migrate create -ext sql -dir db/migrations create_table_first
+
+# up migration
+migrate -database "mysql://root:@tcp(localhost:3306)/database_name" -path db/migrations up
+
+# down migration
+migrate -database "mysql://root:@tcp(localhost:3306)/database_name" -path db/migrations down
+
+# memperbaiki dirty state
+migrate -database "mysql://root:@tcp(localhost:3306)/belajar_golang_restapi" -path db/migrations force 20240213030700 (versi sebelumnya)
